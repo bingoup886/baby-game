@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>宝宝游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 游戏选择页面 -->
+    <div class="container" id="game-selection">
+        <h1 class="title">宝宝游戏</h1>
+        <div class="game-selection">
+            <div class="game-card" data-game="word">
+                <div class="game-icon">🔤</div>
+                <div class="game-name">点单词</div>
+            </div>
+            <div class="game-card" data-game="number">
+                <div class="game-icon">🔢</div>
+                <div class="game-name">点数字</div>
+            </div>
+            <div class="game-card" data-game="animal">
+                <div class="game-icon">🐘</div>
+                <div class="game-name">点动物</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 游戏页面 -->
+    <div class="game-container" id="game-page" style="display: none;">
+        <div class="game-header">
+            <button class="back-button">返回</button>
+            <h2 id="game-title"></h2>
+            <div class="score">得分: <span id="score">0</span></div>
+        </div>
+        <div class="game-board" id="game-board"></div>
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

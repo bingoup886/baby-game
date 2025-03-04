@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Arial Rounded MT Bold', 'Microsoft YaHei', sans-serif;
+    background-color: #f0f9ff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    color: #ff6b6b;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.game-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.game-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+/* 游戏页面样式 */
+.game-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #ff5252;
+}
+
+.score {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin: 20px 0;
+}
+
+.word-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.word-card:active {
+    transform: scale(0.95);
+}
+
+.word-card.correct {
+    background-color: #a3f7bf;
+    animation: correctAnimation 0.5s ease;
+}
+
+.word-card.wrong {
+    background-color: #ff7e67;
+    animation: wrongAnimation 0.5s ease;
+}
+
+@keyframes correctAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wrongAnimation {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+.feedback {
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.feedback.correct {
+    color: #28a745;
+}
+
+.feedback.wrong {
+    color: #dc3545;
+}
+
+.control-panel {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.control-button {
+    background-color: #4e89ae;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-button:hover {
+    background-color: #43658b;
+}
+
+.control-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .game-card {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .game-icon {
+        font-size: 2.5rem;
+    }
+    
+    .game-board {
+        grid-gap: 10px;
+    }
+    
+    .word-card {
+        height: 60px;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+}
